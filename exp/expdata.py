@@ -3,10 +3,21 @@ from utils import fetutils, datautils
 
 
 class ResData:
-    def __init__(self, type_vocab_file):
+    def __init__(self, type_vocab_file, word_vecs_file):
         self.type_vocab, self.type_id_dict = datautils.load_vocab_file(type_vocab_file)
         self.parent_type_ids_dict = fetutils.get_parent_type_ids_dict(self.type_id_dict)
         self.n_types = len(self.type_vocab)
+
+        if word_vecs_file is not None:
+            import config
+
+            print('loading {} ...'.format(word_vecs_file), end=' ', flush=True)
+            self.token_vocab, self.token_vecs = datautils.load_pickle_data(word_vecs_file)
+            self.token_id_dict = {t: i for i, t in enumerate(self.token_vocab)}
+            print('done', flush=True)
+            self.zero_pad_token_id = self.token_id_dict[config.TOKEN_ZERO_PAD]
+            self.mention_token_id = self.token_id_dict[config.TOKEN_MENTION]
+            self.unknown_token_id = self.token_id_dict[config.TOKEN_UNK]
 
 
 def get_srl_pred_dict(srl_pred_objs):

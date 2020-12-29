@@ -1,4 +1,5 @@
 import json
+import pickle
 
 
 def load_vocab_file(vocab_file):
@@ -18,3 +19,8 @@ def read_json_objs(filename):
         for line in f:
             objs.append(json.loads(line))
     return objs
+
+
+def load_pickle_data(filename):
+    with open(filename, 'rb') as f:
+        return pickle.load(f)
