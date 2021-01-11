@@ -60,7 +60,8 @@ def __train():
 
     train_samples_file = os.path.join(config.DATA_DIR, 'figer/figer-dev-man-labeled.txt')
     train_base_preds_file = os.path.join(config.DATA_DIR, 'figer/ftbfet7069-results-figer-wikival.txt')
-    train_srl_preds_file = os.path.join(config.DATA_DIR, 'figer/figer-train-srl1all-preds.txt')
+    train_srl_preds_file = os.path.join(config.DATA_DIR, 'figer/figer-train-srl0-preds.txt')
+    # train_srl_preds_file = os.path.join(config.DATA_DIR, 'figer/figer-train-srl-preds.txt')
     train_hyp_file = os.path.join(config.DATA_DIR, 'figer/figer-wikival-all-fmm-hypext.txt')
     train_verif_hyp_file = os.path.join(config.DATA_DIR, 'figer/figer-wikival-all-fmm-hypext-bbntyped.txt')
     train_hypext_logits_file = os.path.join(config.DATA_DIR,
@@ -77,7 +78,8 @@ def __train():
     test_mentions_file = config.FIGER_FILES['test-mentions']
     test_sents_file = config.FIGER_FILES['test-sents']
     test_base_preds_file = os.path.join(config.DATA_DIR, 'figer/ftbfet7069-results-figer.txt')
-    test_srl_preds_file = os.path.join(config.DATA_DIR, 'figer/figer-test-srl1-preds.txt')
+    test_srl_preds_file = os.path.join(config.DATA_DIR, 'figer/figer-test-srl0-preds.txt')
+    # test_srl_preds_file = os.path.join(config.DATA_DIR, 'figer/figer-test-srl-preds.txt')
     test_hyp_preds_file = os.path.join(config.DATA_DIR, 'figer/figer-test-all-fmm-hypext.txt')
     test_verif_hypext_file = os.path.join(config.DATA_DIR, 'figer/figer-test-all-fmm-hypext-bbntyped.txt')
     test_hypext_logits_file = os.path.join(config.DATA_DIR, 'figer/bert-tmhypextbbn-results-all-figer-test.txt')

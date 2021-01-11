@@ -7,6 +7,8 @@ DATA_DIR = '/data/hldai/data/srfet-data'
 
 LOG_DIR = join(DATA_DIR, 'log')
 
+WIKI_FETEL_WORDVEC_FILE = join(DATA_DIR, 'res/enwiki-20151002-nef-wv-glv840B300d.pkl')
+
 TOKEN_UNK = '<UNK>'
 TOKEN_ZERO_PAD = '<ZPAD>'
 TOKEN_EMPTY_PAD = '<EPAD>'

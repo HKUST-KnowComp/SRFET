@@ -21,3 +21,8 @@ def onehot_encode(type_ids, n_types):
     for t in type_ids:
         tmp[t] = 1.0
     return tmp
+
+
+def get_torch_vec_seq(device, token_id_seq, vecs_mat, requires_grad=False):
+    vec_seq = np.array([vecs_mat[token_id] for token_id in token_id_seq], np.float32)
+    return torch.tensor(vec_seq, device=device, requires_grad=requires_grad)
